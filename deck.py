@@ -12,3 +12,10 @@ class Deck:
 
     def length(self):
         return len(self._cards)
+
+    def shuffle(self):
+        source = self._cards.copy()
+        destination = []
+        for i in range(self.length()):
+            destination.append(source[i])
+        self._cards = destination

@@ -1,4 +1,5 @@
 from card import Card
+from random import randint
 
 class Deck:
     def __init__(self):
@@ -16,6 +17,10 @@ class Deck:
     def shuffle(self):
         source = self._cards.copy()
         destination = []
-        for i in range(self.length()):
-            destination.append(source[i])
+        while len(source) > 0:
+            l = randint(0, len(source) - 1)
+            card = source[l]
+            destination.append(card)
+            source.remove(card)
+
         self._cards = destination

@@ -24,3 +24,6 @@ class Deck:
             source.remove(card)
 
         self._cards = destination
+
+    def draw_card(self):
+        return self._cards.pop()
